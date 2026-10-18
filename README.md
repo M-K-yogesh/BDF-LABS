@@ -7,7 +7,7 @@
 
 ## Live link
 
-Add Yogesh's Render URL here after deployment.
+https://bdf-labs-dtio.onrender.com/
 
 ## Objective
 
@@ -199,7 +199,7 @@ The repository should be public or shared with the faculty. Do not commit `node_
 
 Deploy the project through Yogesh's Render account using `npm install` as the build command and `npm start` as the start command.
 
-**Live URL:** Add Yogesh's deployed Render URL here.
+**Live URL:** https://bdf-labs-dtio.onrender.com/
 
 The following endpoints should be tested:
 
