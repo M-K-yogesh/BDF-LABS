@@ -4,7 +4,7 @@
 **Registration number:** 252U1R9085<br>
 **Section:** CSE GEN AI 2B
 
-**Live link:** Not deployed. This project uses a local SQLite database file, and no hosting account or deployment credentials are available in this environment. The API can be run locally as described below.
+**Live link:** Pending deployment. Railway sign-in succeeded, but the account dashboard reports that its trial has expired and requires an upgrade before new deployments can run. No public URL exists yet; it will be added here after Railway access is reactivated and deployment succeeds.
 
 ## How to run
 
@@ -25,6 +25,17 @@ The server listens on the configured port (defaults to `3000`). Optional environ
 | `DB_PATH` | SQLite database file path, relative to this project folder |
 
 Do not commit `.env`; `.env.example` contains only non-secret defaults. `npm run dev` starts the server with nodemon during development.
+
+## Railway deployment
+
+The project includes [`railway.json`](railway.json), which seeds the database at startup and checks `/books/` for service health. To deploy after Railway access is available:
+
+1. Create a Railway project from the `M-K-yogesh/BDF-LABS` GitHub repository and select `main`.
+2. Set the service root directory to `/BDF LAB 2`.
+3. Add a Railway volume mounted at `/data` and set `DB_PATH` to `/data/books.db` in the service variables. This keeps SQLite changes across deployments.
+4. Generate a public domain in the service's Networking settings. Once the service is healthy, replace the pending live-link note above with that URL.
+
+Railway project creation and database persistence require an active Railway plan; no billing plan was changed as part of this setup.
 
 ## Endpoints
 
