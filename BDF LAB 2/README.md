@@ -4,7 +4,8 @@
 **Registration number:** 252U1R9085<br>
 **Section:** CSE GEN AI 2B
 
-**Live link:** Pending Render deployment. The repository is configured for a free Render web service; its live URL will be added after the service deploys successfully.
+**Live API:** https://bdf-lab-2-sqlite-crud.onrender.com<br>
+**Books endpoint:** https://bdf-lab-2-sqlite-crud.onrender.com/books/
 
 ## How to run
 
@@ -28,7 +29,7 @@ Do not commit `.env`; `.env.example` contains only non-secret defaults. `npm run
 
 ## Render deployment
 
-The repository includes a Render Blueprint at [`../render.yaml`](../render.yaml). It creates a free Node.js web service from this folder, starts the API, and checks `/books/` for health. Free Render services use an ephemeral filesystem: SQLite changes work while the instance is running, but are lost when the service restarts, spins down, or redeploys. Render persistent disks require a paid web-service plan and are not enabled here.
+The repository includes a Render Blueprint at [`../render.yaml`](../render.yaml). It creates a free Node.js web service from this folder, starts the API, and checks `/books/` for health. The deployed service has been verified with all five endpoints. Free Render services use an ephemeral filesystem: SQLite changes work while the instance is running, but are lost when the service restarts, spins down, or redeploys. Render persistent disks require a paid web-service plan and are not enabled here.
 
 ## Endpoints
 
