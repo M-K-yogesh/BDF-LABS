@@ -1,0 +1,80 @@
+{
+  "info": {
+    "name": "Lab 02 - SQLite CRUD API",
+    "description": "Postman requests for all five Lab 2 CRUD endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "GET - All Books",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/books/"
+      }
+    },
+    {
+      "name": "GET - Book by ID",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/books/1/"
+      }
+    },
+    {
+      "name": "POST - Add Book",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Introduction to SQL\",\n  \"author\": \"John Smith\",\n  \"price\": 300,\n  \"pages\": 250\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/books/"
+      }
+    },
+    {
+      "name": "PUT - Update Book 1",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"The Alchemist - Updated\",\n  \"author\": \"Paulo Coelho\",\n  \"price\": 275,\n  \"pages\": 210\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/books/1/"
+      }
+    },
+    {
+      "name": "DELETE - Book 1",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/books/1/"
+      }
+    }
+  ]
+}
