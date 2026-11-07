@@ -4,7 +4,10 @@
 **Registration number:** 252U1R9085 
 **Section:** CSE GEN AI 2B
 
-**Live link:** Not deployed. Deployment needs a cloud hosting platform (such as Render, Railway, or NxtWave Cloud IDE) with persistent disk storage for the SQLite database file (`books.sqlite`). Set the `DB_PATH` environment variable to a persistent volume file path when deployed.
+**Live API (Render):** https://bdf-lab-3-rest-api.onrender.com  
+**Books endpoint:** https://bdf-lab-3-rest-api.onrender.com/books  
+
+> *Note on Render Free Tier:* Render free instances spin down after 15 minutes of inactivity and wake up automatically on the next incoming request (initial request may take 30–50s). Free Render instances use an ephemeral disk; for production persistence across re-deploys, attach a persistent volume to `DB_PATH`.
 
 ---
 
@@ -43,6 +46,15 @@ Executes Node.js built-in test runner against `test/books.test.js` and `test/deb
 ### Interactive API Testing
 - **VS Code REST Client:** Open [`test.http`](./test.http) (or [`app.http`](./app.http)) and click **"Send Request"** on any endpoint.
 - **Postman:** Import [`postman/Lab-03-Books-API.postman_collection.json`](./postman/Lab-03-Books-API.postman_collection.json) and execute the collection.
+
+### Render Cloud Deployment
+The project includes a Render Blueprint at [`render.yaml`](./render.yaml) for automatic deployment:
+- **Root Directory:** `lab-03`
+- **Build Command:** `npm install && npm run seed`
+- **Start Command:** `npm start`
+- **Health Check Path:** `/books`
+- **Environment Variables:** `DB_PATH=./books.sqlite`
+- **Live Endpoint:** [https://bdf-lab-3-rest-api.onrender.com/books](https://bdf-lab-3-rest-api.onrender.com/books)
 
 ---
 

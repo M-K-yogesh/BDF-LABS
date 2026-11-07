@@ -30,7 +30,7 @@ test('creates a book and rejects invalid bodies with JSON messages', async () =>
   assert.equal(invalid.status, 400);
   assert.deepEqual(invalid.body, { message: 'author is required' });
 
-  1 11   const missingTitle = await client.post('/books').send({ author: 'Tolkien', price: 12 });
+  const missingTitle = await client.post('/books').send({ author: 'Tolkien', price: 12 });
   assert.equal(missingTitle.status, 400);
   assert.deepEqual(missingTitle.body, { message: 'title is required' });
 

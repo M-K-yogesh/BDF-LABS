@@ -5,7 +5,7 @@ async function startServer() {
   const db = await openDatabase();
   const app = createApp(db);
   const port = Number(process.env.PORT || 3000);
-  const server = app.listen(port, () => {
+  const server = app.listen(port, '0.0.0.0', () => {
     console.log(`Books API listening on port ${port}`);
   });
 

@@ -7,7 +7,10 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
-    "test": "node --test"
+    "seed": "node src/seed.js",
+    "test": "node --test",
+    "debug:broken": "node debugging-exercise/broken-server.js",
+    "debug:fixed": "node debugging-exercise/fixed-server.js"
   },
   "dependencies": {
     "express": "^5.1.0",
